@@ -80,12 +80,12 @@ func isBlockchainValid(blockchain BlockChain) bool {
 
 // 打印区块信息
 func printBlockchain(block Block) {
-	fmt.Printf("Index:%d\nTransactions:%s\nPrevHash:%s\nHash:%s\n\n", block.Index, block.Transactions, block.PrevHash, block.Hash)
+	fmt.Printf("Index:%d\nTimestamp:%d\nTransactions:%s\nPrevHash:%s\nHash:%s\n\n", block.Index, block.Timestamp, block.Transactions, block.PrevHash, block.Hash)
 }
 
 func main() {
 	//初始化难度
-	difficulty := 5
+	difficulty := 4
 
 	blockchain := BlockChain{}
 	//创世块
