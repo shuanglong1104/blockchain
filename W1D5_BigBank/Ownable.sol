@@ -21,8 +21,8 @@ contract Ownable{
     }
 
     //实现只有Ownable 可以调用 BigBank 的 withdraw()
-    function withdraw(address payable bank, address _addr, uint amount) external  {
-        BigBank(bank).withdraw(_addr, amount);
+    function withdraw(address payable bank) external  {
+        BigBank(bank).withdraw();
     }
 
 }
