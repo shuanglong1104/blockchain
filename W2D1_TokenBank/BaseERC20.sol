@@ -46,12 +46,12 @@ contract BaseERC20 {
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         // write your code here
-        require(balances[msg.sender]>_value,"ERC20: transfer amount exceeds balance");
+        require(balances[msg.sender]>=_value,"ERC20: transfer amount exceeds balance");
         balances[msg.sender] -= _value;
         balances[_to] += _value;
 
-        emit Transfer(msg.sender, _to, _value);  
-        return true;   
+        emit Transfer(msg.sender, _to, _value);
+        return true;
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
