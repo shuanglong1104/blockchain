@@ -30,8 +30,8 @@ contract TokenBank {
         emit Deposit(msg.sender, _amount);
     }
 
-    function withdraw(uint256 _amount) external {
-        // uint256 _amount = balances[msg.sender];
+    function withdraw() external {
+        uint256 _amount = balances[msg.sender];
         require(_amount > 0, "No balance to withdraw");
         myToken.transfer(msg.sender, _amount);
         balances[msg.sender] -= _amount;
