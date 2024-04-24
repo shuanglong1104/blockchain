@@ -1,0 +1,16 @@
+{
+    "title": "MyNFT",
+    "description": "This is my first NFT.",
+    "image": "ipfs://Qmb4SpeWYF4RYiPJcZDHdmqdr73HCRfDKnfWCfZCcDCYYg",
+    "attributes": [
+        {
+            "trait_type": "date",
+            "value": "0423"
+        },
+        {
+            "trait_type": "name",
+            "value": "nft"
+        }
+    ],
+    "version": "2"
+}
