@@ -61,8 +61,8 @@ contract RNTIDO {
     uint256 amount = balances[msg.sender];
     require(amount > 0, "No token to refund");
 
-    balances[msg.sender] = 0; // 清空用户的余额
-    (bool ok, ) = msg.sender.call{value: amount * PRICE}(""); // 退款
+    balances[msg.sender] = 0; // clear balance
+    (bool ok, ) = msg.sender.call{value: amount * PRICE}(""); // refund
     require(ok, "Refund failed");
   }
 
@@ -70,7 +70,7 @@ contract RNTIDO {
     require(block.timestamp > END_AT, "Presale has not ended");
     require(totalRaised >= SOFTCAP, "Softcap not reached");
 
-    (bool ok, ) = msg.sender.call{value: totalRaised}(""); // 提现
+    (bool ok, ) = msg.sender.call{value: totalRaised}(""); // withdraw
     require(ok, "Withdraw failed");
   }
 }
