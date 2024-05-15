@@ -28,5 +28,6 @@ contract MyWalletTest is Test {
     //set new owner
     wallet.transferOwernship(newOwner);
     assertEq(wallet.getOwner(), newOwner, "Owner not transferred");
+    vm.stopPrank();
   }
 }
