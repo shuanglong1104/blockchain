@@ -25,14 +25,14 @@ contract MyWallet {
   function getOwner() public view returns (address) {
     address sOwner;
     assembly {
-      sOwner := sload(0x00)
+      sOwner := sload(0x02)
     }
     return sOwner;
   }
 
   function setOwner(address _addr) public {
     assembly {
-      sstore(0x00, _addr)
+      sstore(0x02, _addr)
     }
   }
 }
